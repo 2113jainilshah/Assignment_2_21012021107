@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E5E5E5"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="@color/black"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="5"
+        android:text="Kid's Calculator"
+
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="40sp"
+        android:textColor="@color/red"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="16dp"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="@color/orange"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="120dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edtNo1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="14"
+                android:inputType="number"
+                android:textSize="40sp"
+                android:hint="Enter No 1 "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:backgroundTint="@color/white"
+                android:padding="16dp" />
+
+            <EditText
+                android:id="@+id/edtNo2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ems="14"
+                android:inputType="number"
+                android:textSize="40sp"
+                android:hint="Enter No 2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtNo1"
+                android:backgroundTint="@color/white"
+                android:padding="16dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:backgroundTint="#2196F3"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@id/cardView"
+        app:layout_constraintEnd_toStartOf="@+id/btnSub"
+        app:layout_constraintWidth_percent="0.25"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp" />
+
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:textSize="40sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FF5722"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintStart_toEndOf="@+id/btnAdd"
+        app:layout_constraintEnd_toEndOf="@id/cardView"
+        app:layout_constraintWidth_percent="0.25"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp" />
+
+    <Button
+        android:id="@+id/btnMul"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="*"
+        android:textSize="40sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#4CAF50"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd"
+        app:layout_constraintStart_toStartOf="@id/btnAdd"
+        app:layout_constraintWidth_percent="0.25"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp" />
+
+    <Button
+        android:id="@+id/btnDiv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="40sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFC107"
+        app:layout_constraintTop_toBottomOf="@+id/btnSub"
+        app:layout_constraintStart_toStartOf="@id/btnSub"
+        app:layout_constraintEnd_toEndOf="@id/btnSub"
+        app:layout_constraintWidth_percent="0.25"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp" />
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btnMul"
+            android:layout_marginTop="60dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView2"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="25dp"
+                app:layout_goneMarginTop="10dp"
+                android:layout_marginLeft="9dp"
+                app:cardBackgroundColor="@color/purple_200"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="160dp">
+
+                <TextView
+                    android:id="@+id/txtResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textSize="40sp"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="@+id/cardView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:padding="16dp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
